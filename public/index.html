@@ -1,0 +1,82 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSC 436 - Real-time Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated gradient background -->
+  <div class="bg-gradient"></div>
+  <div class="bg-orbit orbit-1"></div>
+  <div class="bg-orbit orbit-2"></div>
+
+  <div class="app-shell">
+    <!-- Left sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">C</div>
+        <div>
+          <h1>CSC 436 Chat</h1>
+          <p>Project 5 •</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Room</h2>
+        <div class="pill pill-room">
+          <span class="pill-dot"></span>
+          General Chat
+        </div>
+      </div>
+
+    
+
+      <div class="sidebar-footer">
+        <p class="small">
+         
+        </p>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <div class="chat-panel">
+      <header class="chat-header">
+        <div class="chat-title">
+          <h2>Real-time Chat Room</h2>
+          <p>Messages sync instantly between all connected clients.</p>
+        </div>
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          Live
+        </div>
+      </header>
+
+      <main class="chat-main">
+        <ul id="messages"></ul>
+      </main>
+
+      <form id="chat-form" autocomplete="off" class="chat-input-bar">
+        <div class="input-wrapper">
+          <input
+            id="message-input"
+            type="text"
+            placeholder="Say hi to the room..."
+            required
+          />
+        </div>
+        <button type="submit">
+          <span>Send</span>
+          <span class="send-arrow">➜</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Socket.io client script (served by the server) -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Our client-side logic -->
+  <script src="client.js"></script>
+</body>
+</html>
